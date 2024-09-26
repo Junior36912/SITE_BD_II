@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VENDA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #ddd;
+            margin: 20px auto;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Para centralizar o conteúdo dentro do container */
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+
+        .back-button {
+            display: inline-block; /* Para que a margem funcione corretamente */
+            margin-top: 20px; /* Adiciona um espaçamento entre o botão e a tabela */
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .back-button:hover {
+            color: #0056b3;
+        }
+        .logo {
+            width: 600px; /* Ajuste conforme necessário */
+            height: auto;
+            display: block; /* Para centralizar com margin */
+            margin: 10px auto 5px auto; /* Centraliza horizontalmente */
+        }
+    </style>
+</head>
+<body>
+    <hr>
+    <div class="container">
+        <img src="https://github.com/Junior36912/imagens/blob/main/imagem.png?raw=true" alt="Imagem do Logo" class="logo">
+        <h1>Detalhes do Produto</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID Produto</th>
+                    <th>Nome</th>
+                    <th>Preço</th>
+                    <th>Marca</th>
+                    <th>Categoria</th>
+                    <th>Quantidade</th>
+                    <th>AÇÃO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ produto[0] }}</td>
+                    <td>{{ produto[1] }}</td>
+                    <td>{{ produto[2] }}</td>
+                    <td>{{ produto[3] }}</td>
+                    <td>{{ produto[4] }}</td>
+                    <td>{{ produto[5] }}</td>
+                    <td>
+                        <a href="{{url_for('rota_editar_produto', idproduto=produto[0]) }}"> EDITAR</a><br>
+                        <a href="{{url_for('rota_excluir_produto', idproduto=produto[0]) }}"> EXCLUIR</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br/>
+        <a href="{{ url_for('raiz_produtos') }}" class="back-button">VOLTAR</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Cliente</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        input[type="text"],
+        input[type="real"],
+        input[type="int"],
+        input[type="date"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            margin-right: 80px;
+            margin-left: -10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center; 
+        }
+        .logo {
+            width: 600px; /* Ajuste conforme necessário */
+            height: auto;
+            display: block; /* Para centralizar com margin */
+            margin: 10px auto 5px auto; /* Centraliza horizontalmente */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://github.com/Junior36912/imagens/blob/main/imagem.png?raw=true" alt="Imagem do Logo" class="logo">
+        <h1>Editar Venda</h1>
+        <form method="POST" action="{{ url_for('editar_venda', idvenda=venda[0]) }}">
+            <label for="data_venda">Data da Venda:</label><br>
+            <input type="date" id="data_venda" name="data_venda" value="{{ venda[1] }}"><br>
+
+            <label for="valor_total">Valor Total:</label><br>
+            <input type="text" id="valor_total" name="valor_total" value="{{ venda[2] }}"><br>
+
+            <label for="idcliente">ID do Cliente:</label><br>
+            <input type="text" id="idcliente" name="idcliente" value="{{ venda[3] }}"><br>
+
+            <label for="idproduto">ID do Produto:</label><br>
+            <input type="text" id="idproduto" name="idproduto" value="{{ venda[4] }}"><br>
+
+            <label for="funcionario">Funcionário:</label><br>
+            <input type="text" id="funcionario" name="funcionario" value="{{ venda[5] }}"><br>
+
+            <input type="submit" value="Salvar">
+        </form>
+        <br/>
+        <a href="{{ url_for('raiz_venda') }}" class="back-button">VOLTAR</a>
+    </div>
+</body>
+</html>

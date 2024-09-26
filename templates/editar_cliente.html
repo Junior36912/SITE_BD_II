@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Cliente</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        input[type="text"],
+        input[type="real"],
+        input[type="int"],
+        input[type="date"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            margin-right: 80px;
+            margin-left: -10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Para centralizar o conteúdo dentro do container */
+        }
+        .logo {
+            width: 600px; /* Ajuste conforme necessário */
+            height: auto;
+            display: block; /* Para centralizar com margin */
+            margin: 10px auto 5px auto; /* Centraliza horizontalmente */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://github.com/Junior36912/imagens/blob/main/imagem.png?raw=true" alt="Imagem do Logo" class="logo">
+
+        <h1>Editar Cliente</h1>
+        <form action="{{ url_for('rota_editar_cliente', idcliente=cliente[0]) }}" method="post">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" value="{{ cliente[1] }}"><br>
+
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" value="{{ cliente[2] }}"><br>
+
+            <label for="telefone">Telefone:</label>
+            <input type="text" id="telefone" name="telefone" value="{{ cliente[3] }}"><br>
+
+            <label for="data_nasc">Data de Nascimento:</label>
+            <input type="date" id="data_nasc" name="data_nasc" value="{{ cliente[4] }}"><br>
+
+            <label for="cidade">Cidade:</label>
+            <input type="text" id="cidade" name="cidade" value="{{ cliente[5] }}"><br>
+
+            <input type="submit" value="Salvar">
+        </form>
+        <br/>
+        <a href="{{ url_for('raiz_clientes') }}" class="back-button">VOLTAR</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CADASTRAR CLIENTE</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #007bff;
+        }
+
+        form {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        input[type="text"], input[type="date"], input[type="submit"] {
+            width: calc(100% - 18px); /* Ajuste para compensar o padding */
+            padding: 8px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            box-sizing: border-box; /* Garante que a largura inclua o padding */
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        ::placeholder {
+            color: #aaa;
+        }
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center; 
+        }
+        .logo {
+            width: 400px; /* Ajuste conforme necessário */
+            height: auto;
+            display: block; /* Para centralizar com margin */
+            margin: 10px auto 5px auto; /* Centraliza horizontalmente */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://github.com/Junior36912/imagens/blob/main/imagem.png?raw=true" alt="Imagem do Logo" class="logo">
+        <h1>CADASTRAR CLIENTE</h1>
+        <form method="POST" action="{{ url_for('rota_adicionar') }}">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required placeholder="Digite o nome"><br/>
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" required placeholder="Digite o EMail"><br/>
+            <label for="telefone">Telefone:</label>
+            <input type="text" id="telefone" name="telefone" required placeholder="Digite o telefone"><br/>
+            <label for="data_nasc">Data Nascimento:</label>
+            <input type="date" id="data_nasc" name="data_nasc"><br/>
+            <label for="cidade">Cidade:</label>
+            <input type="text" id="cidade" name="cidade" required placeholder="Digite a cidade"><br/>
+            <input type="submit" value="ADICIONAR">
+        </form>
+        <br/>
+        <a href="{{ url_for('raiz_clientes') }}" class="back-button">VOLTAR</a>
+    </div>
+</body>
+</html>

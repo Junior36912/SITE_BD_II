@@ -1,0 +1,26 @@
+[Tabela Cliente]
+add_contato("João Marcos", "joao@example.com", "(11) 98765-4321", "1990-05-15", "Piripiri")
+add_contato("Raiana", "raiana@example.com", "(11) 98765-4322", "1995-08-20", "Pedro II")
+add_contato("Kaua", "kaua@example.com", "(11) 98765-4323", "1988-03-10", "Lagoa de São Francisco")
+add_contato("Dulce", "dulce@example.com", "(11) 98765-4324", "1980-12-05", "Assunção do Piaui")
+add_contato("Luciene", "luciene@example.com", "(11) 98765-4325", "1975-07-25", "Assunção do Piaui")
+
+
+[Tabela Produto]
+add_produto("Carne de Boi", 20.99, "Frigorífico X", "Carne", 50)
+add_produto("Carne de Porco", 15.99, "Frigorífico Y", "Carne", 40)
+add_produto("Frango", 12.99, "Frigorífico Z", "Carne", 30)
+add_produto("Linguiça", 8.99, "Frigorífico X", "Embutidos", 20)
+add_produto("Peixe", 18.99, "Frigorífico W", "Pescados", 25)
+add_produto("Queijo Prato", 14.99, "Laticínio A", "Frios", 30)
+add_produto("Presunto", 10.99, "Laticínio B", "Frios", 25)
+add_produto("Peito de Peru", 18.99, "Laticínio C", "Frios", 20)
+add_produto("Salsicha", 7.99, "Laticínio A", "Embutidos", 35)
+add_produto("Hamburguer", 22.99, "Laticínio A", "Congelados", 15)
+add_produto("Coxinha de Frango", 2.99, "Laticínio E", "Congelados", 40)
+
+
+agora faça um add_venda que inclua os dados das tabelas passados com a seguinte estrutura, misturando idcliente da tabela clientes com idproduto da tabela de produto:
+add_venda(data_venda, valor_total, idcliente, idproduto, funcionario)
+
+#Sendo que funcionario ou é João, ou é Junior ou Thiago
